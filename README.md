@@ -13,13 +13,26 @@ Follow the steps below to set up and run this app:
 
 ### Prerequisites
 1. **Python 3.x** installed on your machine.
-2. Install the required Python packages:
+2. Install install dependencies:
    ```bash
-   pip install Flask
+   pip install -r requirements.txt
+   
 3. Clone the repository:
     ```bash
     git clone https://github.com/jarkaz/cost-calculator-app.git
 
 4. go to the app directory:
     ```bash
-     cd cost-calculator-app
+   cd cost-calculator-app
+
+5. Run the Flask app:
+   ```bash
+   python cost-calculator-app.py
+
+6. Open your web browser and go to http://127.0.0.1:5000 to access the calculator.
+
+### Usage
+Input product cost, marketing cost per product, sales price, and other details.
+Click "Calculate" to see the results.
+License
+This project is licensed under the MIT License.
