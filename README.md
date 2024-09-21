@@ -13,17 +13,19 @@ Follow the steps below to set up and run this app:
 
 ### Prerequisites
 1. **Python 3.x** installed on your machine.
-2. Install install dependencies:
-   ```bash
-   pip install -r requirements.txt
+
    
-3. Clone the repository:
+2. Clone the repository:
     ```bash
     git clone https://github.com/jarkaz/cost-calculator-app.git
 
-4. go to the app directory:
+3. go to the app directory:
     ```bash
    cd cost-calculator-app
+
+4. Install install dependencies:
+   ```bash
+   pip install -r requirements.txt
 
 5. Run the Flask app:
    ```bash
