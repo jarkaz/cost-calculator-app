@@ -16,15 +16,16 @@ def calculate():
     sales_price = float(request.form['sales_price'])
     quantity_sold = int(request.form['quantity_sold'])
     return_rate = float(request.form['return_rate']) / 100
+    quantity_delivered = quantity_sold - (quantity_sold * return_rate)
     return_cost = float(request.form['return_cost'])
     overhead_costs = float(request.form['overhead_costs'])
     shipping_cost_per_product = float(request.form['shipping_cost_per_product'])
 
     # Perform calculations
-    total_revenue = sales_price * quantity_sold
-    total_product_cost = product_cost * quantity_sold
+    total_revenue = sales_price * quantity_delivered
+    total_product_cost = product_cost * quantity_delivered
     total_costs = total_product_cost + overhead_costs
-    cost_of_returns = return_rate * return_cost * quantity_sold  # return_cost here is shipping cost + return cost
+    cost_of_returns = return_rate * return_cost * quantity_sold
     total_marketing_cost = marketing_cost_per_product * quantity_sold
     total_shipping_cost = shipping_cost_per_product * quantity_sold
     net_profit = total_revenue - (total_costs + cost_of_returns + total_marketing_cost + total_shipping_cost)
@@ -47,4 +48,6 @@ def calculate():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)  # To allow access from other devices on your network,
+    # you need to bind your application to 0.0.0.0. This will make the website accessible to other devices.
+    # app.run(host="0.0.0.0", port=5000)
