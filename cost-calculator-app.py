@@ -24,7 +24,7 @@ def calculate():
     total_revenue = sales_price * quantity_sold
     total_product_cost = product_cost * quantity_sold
     total_costs = total_product_cost + overhead_costs
-    cost_of_returns = return_rate * return_cost * quantity_sold
+    cost_of_returns = return_rate * return_cost * quantity_sold  # return_cost here is shipping cost + return cost
     total_marketing_cost = marketing_cost_per_product * quantity_sold
     total_shipping_cost = shipping_cost_per_product * quantity_sold
     net_profit = total_revenue - (total_costs + cost_of_returns + total_marketing_cost + total_shipping_cost)
@@ -33,7 +33,7 @@ def calculate():
     overhead_per_unit = overhead_costs / quantity_sold
     return_cost_per_unit = return_rate * return_cost
     break_even_marketing_cost_per_product = sales_price - (
-                product_cost + return_cost_per_unit + overhead_per_unit + shipping_cost_per_product)
+            product_cost + return_cost_per_unit + overhead_per_unit + shipping_cost_per_product)
 
     # Pass results to the result template
     return render_template('result.html',
